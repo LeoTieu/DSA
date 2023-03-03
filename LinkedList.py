@@ -7,7 +7,7 @@
 # Imporvable parts on the code: A few error messages
 class node:
     '''
-    User will never interface with this class
+    User will never touch this class
     Subclass of linked list
     '''
 
@@ -23,6 +23,9 @@ class linked_list:
 
 
     def append(self, data):
+        '''
+        Appends data to end of list
+        '''
         new_node = node(data)
         cur = self.head
         while cur.next!=None:
@@ -32,7 +35,7 @@ class linked_list:
 
     def __len__(self):
         """
-        Gets lenght of list
+        Gets length of list
         """
         cur = self.head
         total = 0
@@ -43,6 +46,9 @@ class linked_list:
     
 
     def display(self):
+        '''
+        Displays elements in a list format
+        '''
         elements = []
         cur_node = self.head
         while cur_node.next!=None:
@@ -56,8 +62,7 @@ class linked_list:
         Returns element by index
         """
 
-        # This code is form the DynamicArray file
-        if not 0 <= index < self.size:
+        if not index <= self.size:
             raise IndexError(f'Given index: {index} is larger than array size {self.size}')
         
         cur_idx= 0
@@ -69,6 +74,9 @@ class linked_list:
             cur_idx+=1
 
     def erase(self, index):
+        '''
+        Erases element by index
+        '''
         if not 0 <= index < self.size:
             raise IndexError(f'Given index: {index} is larger than array size {self.size}')
         
@@ -85,6 +93,9 @@ class linked_list:
     # Allows for bracket operator syntax (i.e. a[0] to return first item)
     # Whatever that means
     def __getitem__(self, index):
+        '''
+        Gets item
+        '''
         return self.get(index)
     
 
@@ -92,6 +103,9 @@ class linked_list:
 	# Indices begin at 0. If the provided index is greater than or 
 	# equal to the length of the linked list the 'data' will be appended.
     def insert(self, index, data):
+        '''
+        Inserts data by index
+        '''
         if index < 0:
             print("Error: 'Erase' Index cannot be negative!")
             return
@@ -117,8 +131,12 @@ class linked_list:
 	# to the length of the linked list a warning will be printed 
 	# to the user.
     def set(self, index, data):
+        '''
+        Pretty sure this doesn't even work
+        Sets data by index
+        '''
         if index >= self.length() or index <0:
-            print("Error: 'Set' INdex out of range!")
+            print("Error: 'Set' Index out of range!")
             return
         cur_node = self.head
         cur_idx = 0
