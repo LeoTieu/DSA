@@ -1,0 +1,33 @@
+An unsigned binary number can't show negative numbers. 
+Lets use 4 bit numbers as an example.
+1011 is equal to 8 + 0 + 2 + 1 = 11
+0101 is equal to 4 + 0 + 1 = 5
+
+
+Signed binary numbers uses the last bit (most significant bit)
+to show if the number is negative or positive.
+
+0 if positive
+1 if negative
+
+1011 becomes -1* (2+1) = 3
+0101 is still 5 since first bit is 0
+
+
+Pros:
+Able to show negative numbers.
+0 - 1 does not become a BIG positive number.
+
+Cons: 
+1 less bit is usable causing the maximum value
+to be 50% of a unsigned number.
+
+
+
+
+
+
+Why not always use large bit variables?
+Large bit variables take more space and ram. Optimizing is important.
+So instead of a True or False variable taking only a few bits, 1 maybe
+It would take 128 bits. 
