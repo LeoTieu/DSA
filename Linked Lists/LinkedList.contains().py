@@ -25,21 +25,6 @@ class linked_list:
         return False
 
 
-    def remove_first_occurrence(self, element):
-        '''
-        Removes first occurrence
-        '''
-        cur_node = self.head
-        last_node = None
-        while cur_node is not None:
-            last_node = cur_node
-            cur_node = cur_node.next
-            print(cur_node.data)
-            if cur_node.data == element:
-                last_node.next = cur_node.next
-                return
-
-
     def __init__(self, lst=None):
         self.head = node()
         if lst is not None:
@@ -58,6 +43,15 @@ class linked_list:
             elements.append(cur_node.data)
         print(elements)
 
+    def append(self, data):
+        '''
+        Appends data to end of list
+        '''
+        new_node = node(data)
+        cur = self.head
+        while cur.next!=None:
+            cur = cur.next
+        cur.next = new_node
 
 if __name__ == '__main__':
     MyLinkedList = linked_list(["f", "d", "g", "h", "o"])
