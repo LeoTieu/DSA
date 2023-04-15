@@ -1,5 +1,5 @@
 # Write a function to reverse the elements in the linked list.
-# # Function has a time complexity of O(N)
+# Function has a time complexity of O(N)
 
 class node:
     def __init__(self, data=None):
@@ -18,7 +18,6 @@ class linked_list:
         '''
         Reverses elements within the linked list
         '''
-        new_node = node()
         cur_node = self.head.next
         past_node = None
         second_last_node = None
@@ -54,4 +53,4 @@ class linked_list:
 if __name__ == '__main__':
     MyLinkedList = linked_list(["f", "d", "g", "h", "o"])
     MyLinkedList.reverse()
-    MyLinkedList.display()
+    MyLinkedList.display() # Output ['o', 'h', 'g', 'd', 'f']
