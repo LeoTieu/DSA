@@ -3,6 +3,7 @@
 # Personal Comments:
 # Can't create an empty Binary tree.
 # It works on leetcode tho
+# See line 52 for issue.
 
 class Node():
     def __init__(self, value):
@@ -15,12 +16,13 @@ class BinaryTree():
         self.root = Node(root)
 
     
-    def Depth(self, start):
-        if start:
-            return max(self.Depth(start.left), self.Depth(start.right)) + 1
-        else:
-            return 0
-
+    def depth(self):  
+        def depth_recursive(start):
+            if start:
+                return max(depth_recursive(start.left), depth_recursive(start.right)) + 1
+            else:
+                return 0
+        return depth_recursive(self.root)
         
 
 
@@ -45,6 +47,6 @@ if __name__ == '__main__':
     tree.root.right.right.right = Node(6)
     tree.root.right.right.right.right = Node(2)
     tree.root.right.right.right.right.right = Node(1)
-    print(tree.Depth(tree.root))
+    print(tree.depth())     # 6
     tree2 = BinaryTree()
-    print(tree2.Depth(tree2.root))
+    print(tree2.depth())    # 1 (Should be 0)
