@@ -8,10 +8,12 @@ class Node(object):
         self.right = None
         self.left = None
 
+
 class BinaryTree(object):
     def __init__(self, root):
         self.root = Node(root)
     
+
     def print_tree(self, traversal_type):
         if traversal_type == "preorder":
             return self.preorder(self.root, "")[:-1:]
@@ -23,6 +25,7 @@ class BinaryTree(object):
             print(f"Traversal type {traversal_type} is not supported.")
             return False
 
+
     def preorder(self, start, traversal):
         '''Root -> Left -> Right'''
         if start:
@@ -31,6 +34,7 @@ class BinaryTree(object):
             traversal = self.preorder(start.right, traversal)
         return traversal
     
+
     def inorder(self, start, traversal):
         '''Left -> Root -> Right'''
         if start:
