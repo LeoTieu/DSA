@@ -11,12 +11,14 @@ class Node():
         self.left = None
         self.right = None
 
+
 class BinaryTree():
     def __init__(self, root=None):
         self.root = Node(root)
 
     
     def depth(self):  
+        '''Checks max depth of the Binary Tree'''
         def depth_recursive(start):
             if start:
                 return max(depth_recursive(start.left), depth_recursive(start.right)) + 1
