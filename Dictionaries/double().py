@@ -1,5 +1,6 @@
 # Implement a function that doubles all integers in a dictionary
 # Comment: Use comprehension when learnt
+# Comment2: Nah
 
 def double(d):
     '''Doubles all integers in a dictionary'''
