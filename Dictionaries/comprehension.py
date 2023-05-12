@@ -29,6 +29,7 @@ cities = {'New York': 0, 'Boston': 24, 'Los Angeles': 38, 'Chigaco': 10}
 desc_cities = {key: ("warm" if value >= 20 else "cold") for (key,value) in cities.items()}
 print(desc_cities) # {'New York': 'cold', 'Boston': 'warm', 'Los Angeles': 'warm', 'Chigaco': 'cold'}
 
+
 # -------------------------------------------------------------------------
 # dictionary = {key: function(value) for (key,value) in iterable}
 
