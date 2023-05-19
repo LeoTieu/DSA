@@ -14,5 +14,5 @@ with open("Dictionaries/ai.txt", 'r', encoding='utf-8') as f:
                 word_count[word] += 1
             else:
                 word_count[word] = 1
-    
+  
 print(word_count)
