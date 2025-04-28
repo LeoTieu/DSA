@@ -7,7 +7,7 @@ from min_heap import min_heap_sort
 class TestMinHeap(unittest.TestCase):
     def test_min_heap_property(self):
         for i in range(10):
-            heap = [randint(1,50) for _ in range(30)]
+            heap = [randint(1,50) for _ in range(randint(30,50))]
             min_heap_sort(heap)
 
             for i in range(len(heap)):
