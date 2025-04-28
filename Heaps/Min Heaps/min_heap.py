@@ -4,14 +4,15 @@
 
 
 class MinHeap:
+    '''Takes a list and converts it into a min heap'''    
     def __init__(self, heap: list = None):
         if heap == None:
             heap = []
         self.min_heap = heap
-    
+        convert_to_min_heap(self.min_heap)
+
 
 def min_heapify(heap: list, current_node_index: int = 0):
-    current_node = heap[current_node_index]
     left_node_index = current_node_index * 2 + 1
     right_node_index = current_node_index * 2 + 2    
 
@@ -29,14 +30,8 @@ def min_heapify(heap: list, current_node_index: int = 0):
     return
 
 
-def min_heap_sort(heap: list):
+def convert_to_min_heap(heap: list):
     for i in range(len(heap) // 2 - 1, -1, -1):
-        print(i)
         min_heapify(heap, i)
 
-
-if __name__ == '__main__':
-    my_heap = [9, 4, 7, 1, -2, 6, 5]
-    # my_heap = [7,6,5,4,3,2,1]
-    min_heap_sort(my_heap)
-    print("sorted heap = ", my_heap)
+    
