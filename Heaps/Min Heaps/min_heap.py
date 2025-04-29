@@ -24,18 +24,20 @@ class MinHeap:
 
 
     def insert(self, number: int) -> None:
-        self.min_heap.append(int)
-        current_index = len(self.min_heap)
+        self.min_heap.append(number)
+        current_index = len(self.min_heap) - 1
         
-        def bottom_up_heapify(self, child_index):
-            if child_index == 0:
-                return
+        self._bottom_up_heapify(current_index)
 
-            parent_index = (child_index-1)//2
-            if self.heap[child_index] < self.heap[parent_index]:
-                self.heap[child_index], self.heap[parent_index] = self.heap[parent_index], self.heap[child_index]
-                bottom_up_heapify(parent_index)
+    def _bottom_up_heapify(self, child_index):
+        if child_index == 0:
             return
+
+        parent_index = (child_index-1)//2
+        if self.min_heap[child_index] < self.min_heap[parent_index]:
+            self.min_heap[child_index], self.min_heap[parent_index] = self.min_heap[parent_index], self.min_heap[child_index]
+            self._bottom_up_heapify(parent_index)
+        return
 
 
 def min_heapify(heap: list, current_node_index: int = 0):

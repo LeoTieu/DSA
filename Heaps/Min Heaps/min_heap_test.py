@@ -33,7 +33,7 @@ class TestMinHeap(unittest.TestCase):
         self._assert_is_min_heap(min_heap.min_heap)
 
 
-    def _assert_is_min_heap(self, heap):
+    def _assert_is_min_heap(self, heap: list):
         for i in range(len(heap)):
             left = 2 * i + 1
             right = 2 * i + 2
