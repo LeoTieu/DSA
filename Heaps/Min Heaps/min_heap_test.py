@@ -10,14 +10,27 @@ class TestMinHeap(unittest.TestCase):
             convert_to_min_heap(heap)
             self._assert_is_min_heap(heap)
 
-    
-    
 
     def test_creation_of_min_heap(self):
         for i in range(10):
             heap = [randint(1,50) for _ in range(randint(30,50))]
             min_heap = MinHeap(heap)
             self._assert_is_min_heap(min_heap.min_heap)
+
+
+    def test_insertion(self):
+        amount_of_numbers_at_start = randint(30,50)
+        heap = [randint(1,50) for _ in range(amount_of_numbers_at_start)]
+
+
+        min_heap = MinHeap(heap)
+        amount_of_numbers_to_add = randint(10,20)
+        total_numbers_exected = amount_of_numbers_at_start + amount_of_numbers_to_add
+        for _ in range(amount_of_numbers_to_add):
+            min_heap.insert(randint(1,50))
+
+        self.assertEqual(len(min_heap.min_heap), total_numbers_exected)
+        self._assert_is_min_heap(min_heap.min_heap)
 
 
     def _assert_is_min_heap(self, heap):
