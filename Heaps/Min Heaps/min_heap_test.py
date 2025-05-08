@@ -33,6 +33,21 @@ class TestMinHeap(unittest.TestCase):
         self._assert_is_min_heap(min_heap.min_heap)
 
 
+    def test_extract_min(self):
+        for i in range(10):
+            heap = [randint(1,50) for _ in range(randint(30,50))]
+            min_heap = MinHeap(heap)
+            
+            length = len(min_heap)
+            minimum = min_heap.min_heap[0]
+            minimum_extracted = min_heap.extract_min()
+            extracted_length = len(min_heap)
+            
+            self.assertEqual(minimum, minimum_extracted)
+            self.assertEqual(length - 1, extracted_length)
+
+
+
     def _assert_is_min_heap(self, heap: list):
         for i in range(len(heap)):
             left = 2 * i + 1
