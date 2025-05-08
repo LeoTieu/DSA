@@ -9,18 +9,23 @@ class MinHeap:
         self.min_heap = heap
         convert_to_min_heap(self.min_heap)
 
-    
+
     def get_min(self) -> int:
         '''Gets the minimum value in the min heap'''
         return self.heap[0]
-    
+
 
     def extract_min(self) -> int:
         '''
         Gets the minimum value in the min heap and removes it
         Keeps the min heap structure
         '''
-        pass
+        minimum = self.min_heap[0]
+        self.min_heap[0] = self.min_heap[-1]
+        self.min_heap.pop()
+        min_heapify(self.min_heap)
+
+        return minimum
 
 
     def insert(self, number: int) -> None:
@@ -38,6 +43,9 @@ class MinHeap:
             self.min_heap[child_index], self.min_heap[parent_index] = self.min_heap[parent_index], self.min_heap[child_index]
             self._bottom_up_heapify(parent_index)
         return
+    
+    def __len__(self):
+        return len(self.min_heap)
 
 
 def min_heapify(heap: list, current_node_index: int = 0):
@@ -61,5 +69,3 @@ def min_heapify(heap: list, current_node_index: int = 0):
 def convert_to_min_heap(heap: list):
     for i in range(len(heap) // 2 - 1, -1, -1):
         min_heapify(heap, i)
-
-    
